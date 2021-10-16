@@ -1,0 +1,4 @@
+click==8.0.3
+lxml==4.6.3
+requests==2.26.0
+wget==3.2
