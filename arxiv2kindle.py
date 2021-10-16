@@ -17,35 +17,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 
 
-def is_main_file(file_name):
-    with open(file_name, 'rt') as f:
-        if '\\documentclass' in f.read():
-            return True
-    return False
-
-
 def delete_dir(dir_name):
     subprocess.run(['rm', '-rf', dir_name])
-
-
-def make_single_column(arxiv_dir):
-    for filename in Path(arxiv_dir).glob('*.sty'):
-        with open(filename, 'rt') as f:
-            src = f.readlines()
-        out_src = []
-        for line in src:
-            if line.strip() == '\\twocolumn':
-                continue
-            out_src.append(line)
-        with open(filename, 'wt') as f:
-            f.writelines(out_src)
-
-
-def compile_tex(file_name):
-    for _ in range(3):
-        subprocess.run(['pdflatex', file_name],
-                       stdout=sys.stderr,
-                       cwd=file_name.parent)
 
 
 class Arxiv2KindleConverter:
