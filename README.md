@@ -8,6 +8,11 @@ Arxiv2Kindle is a simple script written in python that converts LaTeX source dow
 - It also converts 2-column formats into a single column for ease of reading.
 - Arxiv2Kindle can mail the converted pdf file to your kindle.
 
+**Note:**
+
+- Arxiv2Kindle does not work on papers without the source.
+- The fixed transformations applied on the source may not lead to a desired result in a few cases. Still, on most cases the results are readable.
+
 ## Useage
 
 Install the dependencies using `pip install -r requirements.txt`, preferrably inside a virtual environment.
@@ -29,6 +34,8 @@ Options:
 ```
 
 ## Converted Samples
+
+**Note:** All photoes have been captured on a Kindle Paperwhite 10th Generation.
 
 ![](./assets/1.jpeg)
 
